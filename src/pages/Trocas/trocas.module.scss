@@ -1,8 +1,17 @@
-.main{
+@use '../../assets/global.scss' as *;
+
+.main {
   background-color: #0d0d0d;
+  min-height: 100vh;
+  width: 100%;
+  padding-bottom: 60px;
+
+  @include mobile {
+    padding-bottom: 40px;
+  }
 }
 
-.header{
+.header {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -10,46 +19,180 @@
   justify-content: center;
   padding: 40px;
   font-family: 'Nunito', sans-serif;
-  color:#ffff;
+  color: #ffffff;
   background-color: #0d0d0d;
 
-  h1{
-    margin-top: 20px;
+  @include mobile {
+    padding: 24px 16px 16px;
   }
 
-  p{
+  h1 {
+    margin-top: 20px;
+
+    @include mobile {
+      font-size: 1.5rem;
+      margin-top: 10px;
+      text-align: center;
+    }
+  }
+
+  p {
     max-width: 500px;
     padding: 15px;
+    text-align: center;
+
+    @include mobile {
+      font-size: 0.9rem;
+      padding: 10px 5px;
+    }
   }
 }
 
 .card {
   width: 100%;
-  justify-content: center;
-  padding: 40px 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  padding: 20px 30px;
   font-family: 'Nunito', sans-serif;
-  color: #ffff;
-  gap: 20px;
+  color: #ffffff;
 
-  h2{
-    text-align: left; 
-    margin-left: 405px; 
-    margin-right: auto; 
-    width: fit-content;
+  @include mobile {
+    padding: 10px 16px;
   }
 
-  p{
-    max-width: 470px;
-  }
+  details {
+    width: 100%;
+    max-width: 500px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 20px;
+    transition: border-color 0.3s ease;
 
-  .destaque{
-    max-width: 470px;
+    @include mobile {
+      padding: 16px;
+    }
+
+    &[open] {
+      border-color: rgba(255, 255, 255, 0.25);
+    }
+
+    summary {
+      cursor: pointer;
+      list-style: none;
+      outline: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      &::-webkit-details-marker {
+        display: none;
+      }
+
+      h2 {
+        font-size: 1.2rem;
+        margin: 0;
+        width: auto;
+        display: inline-block;
+
+        @include mobile {
+          font-size: 1rem;
+        }
+      }
+    }
+
+    p {
+      max-width: 470px;
+      margin-top: 15px;
+      line-height: 1.6;
+      color: #cccccc;
+
+      @include mobile {
+        font-size: 0.88rem;
+        margin-top: 12px;
+      }
+
+      strong {
+        color: #ffffff;
+      }
+    }
+
+    .destaque {
+      max-width: 470px;
+      margin-top: 15px;
+      background: rgba(255, 255, 255, 0.05);
+      border-left: 3px solid #ffffff;
+      padding: 12px;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      color: #cccccc;
+
+      @include mobile {
+        font-size: 0.82rem;
+        padding: 10px;
+      }
+    }
   }
 }
 
-h2{
-   margin-left: 0px;
+.contactSupport {
+  max-width: 500px;
+  margin: 40px auto 0 auto;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 32px 20px;
+  text-align: center;
+  font-family: 'Nunito', sans-serif;
+  color: #ffffff;
+
+  @include mobile {
+    margin: 30px 16px 0 16px;
+    padding: 24px 16px;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+
+    @include mobile {
+      font-size: 1.05rem;
+    }
+  }
+
+  p {
+    color: #a0a0a0;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+
+    @include mobile {
+      font-size: 0.85rem;
+    }
+  }
+
+  .btnPill {
+    display: inline-block;
+    background: #ffffff;
+    color: #000000;
+    padding: 12px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+
+    @include mobile {
+      width: 100%;
+      padding: 12px 0;
+      font-size: 0.9rem;
+    }
+
+    &:hover {
+      transform: scale(1.03);
+      background-color: #e5e5e5;
+    }
+  }
 }

@@ -1,3 +1,5 @@
+@use '../../assets/global.scss' as *;
+
 .container {
   width: 100%;
   min-height: 100vh;
@@ -7,6 +9,10 @@
   align-items: center;
   padding: 20px;
   box-sizing: border-box;
+
+  @include mobile {
+    padding: 16px;
+  }
 }
 
 .card {
@@ -23,11 +29,21 @@
   flex-direction: column;
   gap: 20px; 
 
+  @include mobile {
+    padding: 24px 18px;
+    gap: 16px;
+    border-radius: 14px;
+  }
+
   .tabs {
     display: flex;
     justify-content: space-around;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     margin-bottom: 10px; 
+
+    @include mobile {
+      margin-bottom: 6px;
+    }
 
     button {
       background: none;
@@ -41,6 +57,11 @@
       width: 50%;
       text-align: center;
       position: relative;
+
+      @include mobile {
+        font-size: 15px;
+        padding-bottom: 10px;
+      }
 
       &.active {
         color: #ffffff;
@@ -63,7 +84,6 @@
     }
   }
 
-
   input {
     width: 100%;
     padding: 14px 18px;
@@ -75,6 +95,11 @@
     font-size: 14px;
     outline: none;
     transition: all 0.3s ease;
+
+    @include mobile {
+      padding: 12px 14px;
+      font-size: 16px; 
+    }
 
     &::placeholder {
       color: rgba(255, 255, 255, 0.4);
@@ -100,6 +125,12 @@
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+    @include mobile {
+      padding: 13px;
+      font-size: 15px;
+      margin-top: 6px;
+    }
 
     &:hover {
       background: #e6e6e6;

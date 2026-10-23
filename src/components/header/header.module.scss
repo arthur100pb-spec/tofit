@@ -1,42 +1,95 @@
-.divspan{
-    background-color: #ffffff;
-    display: flex;
-    justify-content: center;
-    color: rgb(0, 0, 0);
-    font-family: 'Nunito', sans-serif;
+@use '../../assets/global.scss' as *;
+
+.divspan {
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000000;
+  font-family: 'Nunito', sans-serif;
+  padding: 6px 0;
+  font-size: 0.85rem;
+  font-weight: 600;
 }
 
-.cabeçalho{
-    background-color: rgb(8, 8, 8);
-    display: flex;
-    justify-content: space-around;
-    background:rgb(8, 8, 8) ;
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 100;
+.cabeçalho {
+  position: sticky; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  
+  background: rgba(8, 8, 8, 0.75); 
+  backdrop-filter: blur(12px); 
+  -webkit-backdrop-filter: blur(12px); 
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 
-    h1{
-        font-family: 'Text Me One', sans-serif;
-        font-size: 25px;
-        margin-top: 5px;
-        
-        a{
-            text-decoration: none;
-            color: #ffffff;
-        }
+  background-color: rgb(8, 8, 8);
+  display: flex;
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 12px 40px;
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+
+  h1 {
+    font-family: 'Text Me One', sans-serif;
+    font-size: 26px;
+    margin: 0; 
+    
+    a {
+      text-decoration: none;
+      color: #ffffff;
+      letter-spacing: -0.5px;
     }
+  }
 }
 
-.linksnav{
-   display: flex;
-   gap: 20px;
-   margin-top: 10px;
-   font-family: 'Nunito', sans-serif;
+.linksnav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-family: 'Nunito', sans-serif;
 
-   a{
+  a {
     color: #ffffff;
     text-decoration: none;
-   }
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: opacity 0.2s ease;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+
+
+.iconsnav {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+
+  img {
+    width: 20px;  
+    height: 20px;
+    object-fit: contain;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: scale(1.1); 
+    }
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+  }
 }
