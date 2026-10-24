@@ -1,95 +1,15 @@
 @use '../../assets/global.scss' as *;
-
-.divspan {
-  background-color: #ffffff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #000000;
-  font-family: 'Nunito', sans-serif;
-  padding: 6px 0;
-  font-size: 0.85rem;
-  font-weight: 600;
-}
-
-.cabeçalho {
-  position: sticky; 
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  
-  background: rgba(8, 8, 8, 0.75); 
-  backdrop-filter: blur(12px); 
-  -webkit-backdrop-filter: blur(12px); 
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-
-  background-color: rgb(8, 8, 8);
-  display: flex;
-  justify-content: space-between; 
-  align-items: center; 
-  padding: 12px 40px;
-  position: relative;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 100;
-
-  h1 {
-    font-family: 'Text Me One', sans-serif;
-    font-size: 26px;
-    margin: 0; 
-    
-    a {
-      text-decoration: none;
-      color: #ffffff;
-      letter-spacing: -0.5px;
-    }
-  }
-}
-
-.linksnav {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  font-family: 'Nunito', sans-serif;
-
-  a {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 0.95rem;
-    font-weight: 500;
-    transition: opacity 0.2s ease;
-
-    &:hover {
-      opacity: 0.8;
-    }
-  }
-}
-
-
-.iconsnav {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-
-  img {
-    width: 20px;  
-    height: 20px;
-    object-fit: contain;
-    cursor: pointer;
-    transition: transform 0.2s ease;
-
-    &:hover {
-      transform: scale(1.1); 
-    }
-  }
-
-  a {
-    display: flex;
-    align-items: center;
-  }
-}
+.divspan { background:#fff; display:flex; justify-content:center; color:#000; font-family:'Nunito',sans-serif; padding:6px 12px; font-size:.85rem; font-weight:600; text-align:center; }
+.cabecalho { position:sticky; top:0; width:100%; z-index:100; background:rgba(8,8,8,.94); backdrop-filter:blur(12px); border-bottom:1px solid rgba(255,255,255,.1); display:flex; justify-content:space-between; align-items:center; padding:12px 40px; }
+.cabecalho h1 { font-family:'Text Me One',sans-serif; font-size:26px; flex:none; }
+.cabecalho h1 a, .linksnav a { color:#fff; text-decoration:none; }
+.linksnav { display:flex; align-items:center; gap:22px; font-family:'Nunito',sans-serif; }
+.linksnav a { font-size:.92rem; font-weight:600; transition:opacity .2s; }
+.linksnav a:hover { opacity:.7; }
+.iconsnav { display:flex; align-items:center; gap:15px; }
+.iconsnav img { width:20px; height:20px; object-fit:contain; }
+.cartLink { position:relative; display:flex; }
+.cartLink span { position:absolute; top:-9px; right:-10px; min-width:17px; height:17px; display:grid; place-items:center; border-radius:50%; background:#fff; color:#000; font-size:10px; font-weight:900; }
+.logout { border:1px solid #666; background:transparent; color:#fff; border-radius:20px; padding:5px 10px; cursor:pointer; }
+@include tablet { .cabecalho { padding:12px 18px; flex-direction:column; gap:10px; } .linksnav { flex-wrap:wrap; justify-content:center; gap:10px 16px; } }
+@include mobile { .linksnav { font-size:.82rem; } .linksnav li:nth-child(3), .linksnav li:nth-child(4) { display:none; } }

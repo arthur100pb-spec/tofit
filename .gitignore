@@ -2,3 +2,8 @@
 dist
 .DS_Store
 .env
+.env.*
+!.env.example
+data/*.db
+data/*.db-*
+*.tsbuildinfo

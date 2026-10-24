@@ -185,3 +185,10 @@
     }
   }
 }
+
+.card h2 { color:#fff; text-align:center; font-family:'Nunito',sans-serif; }
+.help { color:#aaa; font: .9rem 'Nunito',sans-serif; line-height:1.4; }
+.error { color:#ff9f9f; font: .86rem 'Nunito',sans-serif; }
+.success { color:#b8f5bd; font: .86rem 'Nunito',sans-serif; }
+.card > a { color:#fff; text-align:center; font-family:'Nunito',sans-serif; }
+.bttn:disabled { opacity:.6; cursor:wait; }

@@ -1,0 +1,1 @@
+import { Link } from 'react-router-dom';import styles from './Shop.module.scss';export default function NotFound(){return <main className={styles.page}><div className={styles.empty}><h1>Página não encontrada</h1><p><Link to="/">Voltar para a loja</Link></p></div></main>}
